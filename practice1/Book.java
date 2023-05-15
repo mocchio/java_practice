@@ -5,6 +5,14 @@ public class Book implements Comparable<Book> {
   private Date publishDate;
   private String comment;
 
+  // ゲッターとセッター
+  public String getTitle() {
+    return this.title;
+  }
+  public void setTitle(String title) {
+    this.title = title;
+  }
+
   // equalsメソッドのオーバーライド
   public boolean equals(Object o) {
     if (o == this) {
