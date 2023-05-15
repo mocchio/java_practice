@@ -50,7 +50,7 @@ public class Book implements Comparable<Book> {
 
   // hashCodeメソッドのオーバーライド
   public int hashCode() {
-    return Object.hash(this.title, this.publishDate, this.comment);
+    return Objects.hash(this.title, this.publishDate, this.comment);
   }
 
   // 自然順序付けの定義
@@ -62,7 +62,7 @@ public class Book implements Comparable<Book> {
   public Book clone() {
     Book result = new Book();
     result.title = this.title;
-    result.publishDate = this.publishDate.clone();
+    result.publishDate = (Date)this.publishDate.clone();
     result.comment = this.comment;
     return result;
   }
