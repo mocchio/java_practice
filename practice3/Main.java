@@ -1,4 +1,6 @@
 import java.util.function.*;
+import java.util.*;
+import java.util.stream.*;
 
 public class Main {
   public static void main(String[] args) {
@@ -15,5 +17,19 @@ public class Main {
     // 関数の呼び出し
     System.out.println(f1.test(15));
     System.out.println(f2.call(66, "ジョン"));
+
+    // StreamAPIの練習
+    List<String> names = new ArrayList<>();
+    names.add("菅原拓真");
+    names.add("大江岳斗");
+    names.add("朝香あゆみ");
+    names.add("湊悠介");
+
+    names.stream()
+    .filter(name -> name.length() <= 4)
+    .map(name -> name + "さん")
+    .forEach(name -> {
+      System.out.println(name);
+    });
   }
 }
