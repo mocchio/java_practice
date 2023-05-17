@@ -28,25 +28,30 @@ public class Book implements Comparable<Book> {
     this.comment = comment;
   }
 
-  // equalsメソッドのオーバーライド
+  // // equalsメソッドのオーバーライド
+  // public boolean equals(Object o) {
+  //   if (o == this) {
+  //     return true;
+  //   }
+  //   if (o == null) {
+  //     return false;
+  //   }
+  //   if (!(o instanceof Book)) {
+  //     return false;
+  //   }
+  //   Book b = (Book)o;
+  //   if (!this.title.equals(b.title)) {
+  //     return false;
+  //   }
+  //   if (!this.publishDate.equals(b.publishDate)) {
+  //     return false;
+  //   }
+  //   return true;
+  // }
+
+  // commons-langを使ったequalsのオーバーライド
   public boolean equals(Object o) {
-    if (o == this) {
-      return true;
-    }
-    if (o == null) {
-      return false;
-    }
-    if (!(o instanceof Book)) {
-      return false;
-    }
-    Book b = (Book)o;
-    if (!this.title.equals(b.title)) {
-      return false;
-    }
-    if (!this.publishDate.equals(b.publishDate)) {
-      return false;
-    }
-    return true;
+    return EqualsBuilder.reflectionEquals(this, o);
   }
 
   // hashCodeメソッドのオーバーライド
