@@ -64,9 +64,14 @@ public class Book implements Comparable<Book> {
     return HashCodeBuilder.reflectionHashCode(this);
   }
 
-  // 自然順序付けの定義
+  // // 自然順序付けの定義
+  // public int compareTo(Book obj) {
+  //   return this.publishDate.compareTo(obj.publishDate);
+  // }
+
+  // commons-langを使ったcompareToのオーバーライド
   public int compareTo(Book obj) {
-    return this.publishDate.compareTo(obj.publishDate);
+    return CompareToBuilder.reflectionCompare(this, obj, "comment", "title");
   }
 
   // 深いコピー
