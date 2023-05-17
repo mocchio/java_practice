@@ -1,4 +1,5 @@
 import java.util.*;
+import org.apache.commons.lang3.builder.*;
 
 public class Book implements Comparable<Book> {
   private String title;
@@ -49,8 +50,13 @@ public class Book implements Comparable<Book> {
   }
 
   // hashCodeメソッドのオーバーライド
+  // public int hashCode() {
+  //   return Objects.hash(this.title, this.publishDate, this.comment);
+  // }
+
+  // commons-langを使ったhashCodeのオーバーライド
   public int hashCode() {
-    return Objects.hash(this.title, this.publishDate, this.comment);
+    return HashCodeBuilder.reflectionHashCode(this);
   }
 
   // 自然順序付けの定義
