@@ -37,6 +37,7 @@ public class Main {
         i = fis.read();
       }
       gzos.flush();
+      gzos.close();
     } catch (IOException e) {
       System.out.println("ファイル処理に失敗しました");
     }
