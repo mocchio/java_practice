@@ -22,7 +22,7 @@ public class Main {
 
     // GZIPOutputStreamの利用
     String inFile = "2022/5/18 Javaテスト\n以上";
-    String outFile = "/User/java_projects/java_test.txt";
+    String outFile = "c:/java_projects/java_test.txt";
     
     // 例外処理
     try (
